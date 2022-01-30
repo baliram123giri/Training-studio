@@ -11,3 +11,60 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+header .nav .scroll-to-section a{
+    color: #333333 !important;
+}
+.header-area .main-nav .nav li:last-child a{
+  color: #fff !important;
+  border: 1px solid salmon !important;
+
+}
+
+.header-area .main-nav .nav li:last-child a:hover{
+  color: #333333 !important;
+  background: none !important;
+  border: 1px  solid salmon ;
+}
+.b_btn_light_red{
+  color: #fff !important;
+  border: 1px solid salmon !important;
+  background: #ed563b;
+}
+.b_btn_light_red:hover{
+  color: #333333 !important;
+  background: none !important;
+  border: 1px  solid salmon ;
+}
+footer {
+  background:#ed563b;
+}
+/* //register */
+
+.b_form{
+  margin-top: 120px;
+}
+.cursor_disabled{
+    /* background: rebeccapurple; */
+    cursor: url("../public/img/cursor/disabled.png"), not-allowed !important;
+}
+
+.loader{
+  display: flex;
+  height: 100vh;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  width: 100%;
+  margin: auto;
+  z-index: 9999;
+}
+
+/* errorpage  */
+.err{
+  margin: auto;
+  width: 70%;
+  margin-top: 50px;
+}

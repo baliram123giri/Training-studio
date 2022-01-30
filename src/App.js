@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Header from "./Comp/Common/Header";
+import Homepage from "./Comp/Home/Homepage";
+import Footer from "./Comp/Common/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CallToAction from "./Comp/Home/CallToAction";
+import Contact from "./Comp/Home/Contact";
+import Features from "./Comp/Home/Features";
+import OurClasses from "./Comp/Home/OurClasses";
+import Schedule from "./Comp/Home/Schedule";
+import Trainers from "./Comp/Home/Trainers";
+import Signup from "./Comp/User/Signup";
+import ErrorPage from "./Comp/Common/ErrorPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/calltoaction" element={<CallToAction />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<Features />} />
+            <Route path="/ourclasses" element={<OurClasses />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/trainers" element={<Trainers />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
