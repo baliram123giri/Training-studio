@@ -94,7 +94,7 @@ export default function Signup() {
       <div className='b_form'>
          {loader?  <Loader />:null}
          <ToastContainer />
-        <form onSubmit={signUpHandler} className='w-50 p-4 my-5 mx-auto bg-white shadow'>
+        <form onSubmit={signUpHandler} className='w-50 p-4 my-5 mx-auto bg-white shadow b_form_user'>
             <h4 className='text-center'>Sign Up</h4>
             <div className="form-group">
                 <label htmlFor="exampleInputEmail1">First Name <span className='text-danger'>*</span></label>

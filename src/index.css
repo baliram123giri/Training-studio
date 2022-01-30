@@ -65,6 +65,19 @@ footer {
 /* errorpage  */
 .err{
   margin: auto;
-  width: 70%;
+  width: 52%;
   margin-top: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+  .logo{
+    font-size: 1.5rem !important;
+  }
+  .header-area .main-nav .nav li:last-child a{
+    background-color: none !important;
+    border: none !important;
+  }
+  .b_form_user{
+    width: 100% !important;
+  }
 }

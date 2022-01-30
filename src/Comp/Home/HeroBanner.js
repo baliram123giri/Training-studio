@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function HeroBanner() {
   return (
@@ -11,7 +12,7 @@ export default function HeroBanner() {
         <h6>work harder, get stronger</h6>
         <h2>easy with our <em>gym</em></h2>
         <div className="main-button scroll-to-section">
-          <a href="#features">Become a member</a>
+          <Link to="/signup">Become a member</Link>
         </div>
       </div>
     </div>
