@@ -58,7 +58,7 @@ export default function Header() {
               {localStorage.getItem("user_info") ? (
                 <>
                   <li onClick={profileHandler} className="nav-item user_dash_profile">
-                    <Link to="/">
+                    <span style={{cursor:"pointer"}}>
                       <div className="d-flex align-items-center ">
                         <i className="fas fa-user-circle mx-1 "></i>
                         {
@@ -70,7 +70,7 @@ export default function Header() {
                           </span>
                         }
                       </div>
-                    </Link>
+                    </span>
                     <div className={`user_dash_profile_box shadow-lg rounded-bottom ${!active?"active":""}`}>
                       <ul className="navbar-nav flex-column ">
                           <li className="nav-item text-center  mx-auto w-100">
