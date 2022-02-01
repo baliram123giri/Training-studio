@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { formDetailsReducer } from './redux/reducers/FormDetailsReducers';
 
+const redux = require("redux")
+
+const createStore = redux.createStore
+
+const myStore = createStore(formDetailsReducer)
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={myStore}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

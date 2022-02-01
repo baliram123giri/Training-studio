@@ -1,55 +1,65 @@
+/* //font imported */
+
+@font-face {
+  font-family: slick;
+  src: url("../public/assets/fonts/slick.ttf");
+}
+@font-face {
+  font-family: fontawesome-webfont;
+  src: url("../public/assets/fonts/fontawesome-webfont.woff");
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-header .nav .scroll-to-section a{
-    color: #333333 !important;
+header .nav .scroll-to-section a {
+  color: #333333 !important;
 }
-.header-area .main-nav .nav li:last-child a{
+.header-area .main-nav .nav li:last-child a {
   color: #fff !important;
   border: 1px solid salmon !important;
-
 }
 
-.header-area .main-nav .nav li:last-child a:hover{
+.header-area .main-nav .nav li:last-child a:hover {
   color: #333333 !important;
   background: none !important;
-  border: 1px  solid salmon ;
+  border: 1px solid salmon;
 }
-.b_btn_light_red{
+.b_btn_light_red {
   color: #fff !important;
   border: 1px solid salmon !important;
   background: #ed563b;
 }
-.b_btn_light_red:hover{
+.b_btn_light_red:hover {
   color: #333333 !important;
   background: none !important;
-  border: 1px  solid salmon ;
+  border: 1px solid salmon;
 }
 footer {
-  background:#ed563b;
+  background: #ed563b;
 }
 /* //register */
 
-.b_form{
+.b_form {
   margin-top: 120px;
+  margin-bottom: 100px;
 }
-.cursor_disabled{
-    /* background: rebeccapurple; */
-    cursor: url("../public/img/cursor/disabled.png"), not-allowed !important;
+.cursor_disabled {
+  /* background: rebeccapurple; */
+  cursor: url("../public/img/cursor/disabled.png"), not-allowed !important;
 }
 
-.loader{
+.loader {
   display: flex;
   height: 100vh;
   position: fixed;
@@ -63,21 +73,112 @@ footer {
 }
 
 /* errorpage  */
-.err{
+.err {
   margin: auto;
   width: 52%;
   margin-top: 50px;
 }
 
+/* //user review  */
+.user_review{
+  margin: 100px auto;
+}
+.b_headimg3{
+  font-family: slick;
+  font-weight: 400;
+  font-size: 2rem;
+}
+.b_heading4{
+  font-family: fontawesome-webfont;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+/* .profile_img{
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+} */
+.img-rounded{
+  border-radius: 50%;
+}
+.header-area a{
+   padding: 10px 20px;
+   color: #666666;
+   z-index: 1111;
+}
+.signup {
+  background-color: #ed563b;
+  color: #fff !important;
+}
+/*-----------------------------------
+ file upload
+/*-----------------------------------*/
+.file_upload{
+  background-color: white;
+  width: 50%;
+  margin: auto;
+  border: 1px dashed #ed563b;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.file_upload i{
+  font-size: 2rem;
+  color: #ed563b;
+}
+.filename{
+  font-size: 12px;
+  font-style: italic;
+}
+.file_upload input{
+  background-color: #ed563b;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+}
+.progress-bar{
+  background-color: #ed563b !important;
+}
+.btn:focus{
+  box-shadow: none !important;
+}
+/*--------
+ user Profile
+-------*/
+.user_prfile a{
+  /* background-color: rgb(255, 91, 91); */
+padding-top: 15px !important;
+display: block;
+}
+.user_prfile i{
+  font-size: 1.8rem;
+  color: #ed563b;
+}
+
+.user_dash_profile_box{
+  background-color: #ffffff;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  right: 0;
+  top: 82px;
+}
+.user_dash_profile_box.active{
+  display: none;
+}
 @media only screen and (max-width: 600px) {
-  .logo{
+  .logo {
     font-size: 1.5rem !important;
+
   }
-  .header-area .main-nav .nav li:last-child a{
+  .header-area .main-nav .nav li:last-child a {
     background-color: none !important;
     border: none !important;
   }
-  .b_form_user{
+  .b_form_user {
     width: 100% !important;
   }
 }

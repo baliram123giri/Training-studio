@@ -1,5 +1,4 @@
 
-import Header from "./Comp/Common/Header";
 import Homepage from "./Comp/Home/Homepage";
 import Footer from "./Comp/Common/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -11,11 +10,15 @@ import Schedule from "./Comp/Home/Schedule";
 import Trainers from "./Comp/Home/Trainers";
 import Signup from "./Comp/User/Signup";
 import ErrorPage from "./Comp/Common/ErrorPage";
-
+import ReviewMember from "./Comp/User/ReviewMember";
+import Login from "./Comp/User/Login";
+import Header from "./Comp/Common/Header";
+import FileUpload from "./Comp/Home/FileUpload";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+    <Header />
+ 
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/calltoaction" element={<CallToAction />} />
@@ -25,7 +28,11 @@ function App() {
             <Route path="/schedule" element={<Schedule />} />
             <Route path="/trainers" element={<Trainers />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/signin" element={<Login/>} />
             <Route path="*" element={<ErrorPage />} />
+            <Route path="/user-review" element={<ReviewMember/>} />
+            <Route path="/file" element={<FileUpload/>} />
+
           </Routes>
       <Footer />
     </BrowserRouter>

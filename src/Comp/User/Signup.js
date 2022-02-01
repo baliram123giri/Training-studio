@@ -1,18 +1,24 @@
 
-import React, {  useState } from 'react';
+import React, {  useState,useEffect } from 'react';
 import config from "../../data/config.json"
 import Loader from '../Common/Loader';
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function Signup() {
+ function Signup() {
         const [user, setUser] = useState({fname:"",lname:"",email:"",password:"",cpassword:"", monumber:""})
         const [cpassErr, setCpassErr] = useState(false)
         const [passLengthErr, setPassLengthErr] = useState(false)
         const [emailCheckErr, setEmailCheckErr] = useState(false)
         const [mobileCheckErr, setMobileCheckErr] = useState(false)
         const [loader, setLoader] = useState(false)
-
+        const histroy = useNavigate()
+        useEffect(()=>{
+            if(localStorage.getItem("user_info")){
+              histroy("/")
+            }
+         },[])
         // useEffect(()=>{
         // 
         // },[])
@@ -121,8 +127,8 @@ export default function Signup() {
                 <span className='text-danger'>{passLengthErr?"Password length must be greater 6 charcters":""}</span>
             </div>
             <div className="form-group">
-                <label htmlFor="exampleInputPassword1">Confirm Password <span className='text-danger'>*</span></label>
-                <input required type="password" className="form-control" id="confirmPassword"  value={user.cpassword} onChange={cpasswordHandler}/>
+                <label htmlFor="con">Confirm Password <span className='text-danger'>*</span></label>
+                <input required type="password" className="form-control" id="con"  value={user.cpassword} onChange={cpasswordHandler}/>
                 <span className='text-danger'>{cpassErr?"Password and Confirm password are not match!":""}</span>
             </div>
             <button type="submit" className={`btn  b_btn_light_red `}>SIGNUP</button>
@@ -131,3 +137,7 @@ export default function Signup() {
       </div>
   );
 }
+
+
+
+export default  Signup
