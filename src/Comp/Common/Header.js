@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Header() {
+  //mobile navabar
+  const [mobileNav, setMobileNav] = useState(true)
+  // const [closeNav, setCloseNav] = useState(true)
+
   //logouthadler
   const [userData, setUserData] = useState(
     JSON.parse(localStorage.getItem("user_info"))
@@ -21,6 +25,13 @@ export default function Header() {
         setActive(false)
       }
   }
+  //mobile nav handler 
+  const mobileNavHandler =()=>{
+    setMobileNav(false)
+  }
+  const closeNavHandler = ()=>{
+    setMobileNav(true)
+  }
   return (
     <header className="header-area header-sticky bg-white px-0">
       <nav className="navbar navbar-expand-lg bg-white shadow">
@@ -29,21 +40,16 @@ export default function Header() {
             Training<em> Studio</em>
           </Link>
           <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            className="btn text-dark navbar-toggler"
+            onClick={mobileNavHandler}
           >
-            <span className="navbar-toggler-icon" />
+            <i class="fas fa-bars "></i>
           </button>
           <div
-            className="collapse navbar-collapse "
+            className={`${mobileNav?"":"active"} collapse navbar-collapse `}
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0  ">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 mobile_nav ">
               <li className="nav-item">
                 <Link to="/about">About</Link>
               </li>
@@ -55,6 +61,7 @@ export default function Header() {
               </li>
             </ul>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
+            <i onClick={closeNavHandler} class="far fa-times-circle close_nav"></i>
               {localStorage.getItem("user_info") ? (
                 <>
                   <li onClick={profileHandler} className="nav-item user_dash_profile">
@@ -69,7 +76,9 @@ export default function Header() {
                             }
                           </span>
                         }
+                       
                       </div>
+                      
                     </span>
                     <div className={`user_dash_profile_box shadow-lg rounded-bottom ${!active?"active":""}`}>
                       <ul className="navbar-nav flex-column ">
@@ -87,7 +96,7 @@ export default function Header() {
               ) : (
                 <>
                   <li className="nav-item mx-3 ">
-                    <Link to="/signin" className="pr-0">
+                    <Link to="/signin" className="pr-md-0">
                       Sign In
                     </Link>
                   </li>

@@ -169,10 +169,65 @@ display: block;
 .user_dash_profile_box.active{
   display: none;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width:993px){
+  .close_nav, .navbar-toggler{
+    display: none;
+  }
+  #navbarSupportedContent{
+    transform: translate(0px);
+  }
+
+}
+@media only screen and (max-width:993px) {
   .logo {
     font-size: 1.5rem !important;
-
+  }
+  .header-area .logo{
+      margin-left: 0 !important;
+  }
+ .user_dash_profile_box{
+    top: 50px;
+ }
+  #navbarSupportedContent{
+    position:absolute;
+    top: 0px;
+    background-color: #ffffff;
+    box-shadow:0 0px 20px rgba(0, 0, 0, 0.2) !important;
+    border-left: 1px solid #ed563b;
+    width: 38%;
+    height: 100vh;
+    right: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding-left: 40px;
+    z-index: 2222 !important;
+   visibility: hidden;
+   transform: translate(300px, 0px);
+   transition: 1s all ease-in-out;
+  }
+  #navbarSupportedContent.active{
+    visibility: visible;
+    transform: translate(0px);
+  }
+  .close_nav{
+    position: absolute;
+    right: 8px;
+    font-size: 1.5rem;
+    top: 8px;
+    width: 30px;
+    height: 30px;
+    color: #ed563b;
+    cursor: pointer;
+  }
+  .navbar-nav{
+    margin: 0 !important;
+  }
+  .mobile_nav{
+    height: 95vh;
+  }
+  .nav-item{
+    text-align: start;
   }
   .header-area .main-nav .nav li:last-child a {
     background-color: none !important;
