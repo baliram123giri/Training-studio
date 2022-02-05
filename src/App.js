@@ -14,6 +14,7 @@ import ReviewMember from "./Comp/User/ReviewMember";
 import Login from "./Comp/User/Login";
 import Header from "./Comp/Common/Header";
 import FileUpload from "./Comp/Home/FileUpload";
+import Appointment from "./Comp/Home/Appointment";
 function App() {
   return (
     <BrowserRouter>
@@ -32,6 +33,7 @@ function App() {
             <Route path="*" element={<ErrorPage />} />
             <Route path="/user-review" element={<ReviewMember/>} />
             <Route path="/file" element={<FileUpload/>} />
+            <Route path="/appointment" element={<Appointment/>} />
 
           </Routes>
       <Footer />

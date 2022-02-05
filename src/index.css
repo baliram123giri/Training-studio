@@ -157,7 +157,10 @@ display: block;
   font-size: 1.8rem;
   color: #ed563b;
 }
-
+abbr[title]{
+  text-decoration: none !important;
+  color: #0e040cbb;
+}
 .user_dash_profile_box{
   background-color: #ffffff;
   width: 200px;
@@ -168,6 +171,32 @@ display: block;
 }
 .user_dash_profile_box.active{
   display: none;
+}
+
+/* user appointement start*/
+
+.date_picked{
+  font-size: 12px ;
+}
+.rdrDayNumber span::after{
+  background-color: #ed563b !important;
+}
+.time_btn{
+  border: 1px solid #ed563b;
+  border-radius: 4px;
+  padding: 5px 25px;
+  color: #ed563b;
+}
+.time_btn:hover{
+  background-color: #ed563b5d;
+  color: #ed563b;
+}
+.booking_warning{
+  background-color: #ed563b;
+  padding: 2px 8px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 4px;  font-style: italic;
 }
 @media only screen and (min-width:768px){
   .close_nav, .navbar-toggler{
@@ -208,6 +237,7 @@ display: block;
     transform: translate(0px);
     opacity: 1;
   }
+
   .close_nav{
     position: absolute;
     right: 8px;

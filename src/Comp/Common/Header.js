@@ -59,6 +59,9 @@ export default function Header() {
               <li className="nav-item">
                 <Link to="/contact">Contact</Link>
               </li>
+              <li className="nav-item">
+                <Link to="/appointment">Appointment</Link>
+              </li>
             </ul>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
             <i onClick={closeNavHandler} class="far fa-times-circle close_nav"></i>
