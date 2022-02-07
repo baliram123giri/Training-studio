@@ -174,7 +174,13 @@ abbr[title]{
 }
 
 /* user appointement start*/
-
+.date_not_avail{
+  width: 79%;
+}
+.btn_select:focus{
+  background-color: #ed563b !important;
+  color: #fff !important;
+}
 .date_picked{
   font-size: 12px ;
 }
