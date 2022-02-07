@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Header() {
@@ -43,7 +43,7 @@ export default function Header() {
             className="btn text-dark navbar-toggler"
             onClick={mobileNavHandler}
           >
-            <i class="fas fa-bars "></i>
+            <i className="fas fa-bars "></i>
           </button>
           <div
             className={`${mobileNav?"":"active"} collapse navbar-collapse `}
@@ -64,7 +64,7 @@ export default function Header() {
               </li>
             </ul>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 ">
-            <i onClick={closeNavHandler} class="far fa-times-circle close_nav"></i>
+            <i onClick={closeNavHandler} className="far fa-times-circle close_nav"></i>
               {localStorage.getItem("user_info") ? (
                 <>
                   <li onClick={profileHandler} className="nav-item user_dash_profile">
