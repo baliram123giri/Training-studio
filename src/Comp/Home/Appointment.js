@@ -1,4 +1,4 @@
-import { addDays, set } from "date-fns";
+import { addDays } from "date-fns";
 import React, { useState, useEffect } from "react";
 import { Calendar } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
@@ -104,8 +104,10 @@ export default function Appointment() {
     presentDate = presentDate.split(" ").join("");
     presentDate = Number(presentDate);
     //PresentDate end
-
-    if ( presentDate >= startdate) {
+    var newDate = new Date() 
+      newDate = newDate.getFullYear()+Month+newDate.getDate()
+ 
+    if ( presentDate>= Number(newDate) ) {
       if ((holidayDate === presentDate) && (availibity.attributes.availibity===false) ) {
         message = {
           ...message,
@@ -159,7 +161,7 @@ export default function Appointment() {
     var userinfo = JSON.parse(localStorage.getItem("user_info"));
     userinfo = userinfo.user;
     var presentDate = startDate.getFullYear() + "-" + Month + "-" + selecDate;
-    var appointTime = timeShow.time + ":00" + ":000";
+    var appointTime = (`${timeShow.time}:00:000`);
     appointTime = appointTime.replace(".", ":");
 
     if (appointTime.length !== 12) {
@@ -208,7 +210,7 @@ export default function Appointment() {
             <i className="fas fa-check-circle text-success mx-1"></i> <br />
             <span className="filename text-success">
               Appointment has been booked Successfully! on
-              {successMsg.day + " " + successMsg.response.Date}
+              {" "+successMsg.day + " " + successMsg.response.Date}
             </span>
           </>
         ) : (
